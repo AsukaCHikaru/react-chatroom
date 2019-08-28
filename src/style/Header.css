@@ -1,6 +1,20 @@
 header{
-  background-color: #3C1B49;
+  display: grid;
+  grid-template-columns: 64px auto 64px;
   height: 64px;
   width: 375px;
   border-radius: 40px;
+  background-color: #3C1B49;
+}
+header .header-title-wrapper{
+  text-align: center;
+  margin: 18px 0;
+  height: 28px;
+}
+header .header-title-wrapper h1{
+  margin: auto;
+  font-size: 20px;
+  font-weight: 400;
+  color: #fff;
+  line-height: 28px;
 }

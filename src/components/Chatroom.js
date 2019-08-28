@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import Header from "./Header";
 
-import "../style/ChatroomView.css"
+import "../style/Chatroom.css"
 
 const mapStateToProps = state => {
 };
@@ -11,7 +11,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = {
 };
 
-const ChatroomView = ({}) => {
+const Chatroom = ({}) => {
   return (
     <div className="chatroom-container">
       <Header />
@@ -19,4 +19,4 @@ const ChatroomView = ({}) => {
   );
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ChatroomView);
+export default connect(mapStateToProps, mapDispatchToProps)(Chatroom);
