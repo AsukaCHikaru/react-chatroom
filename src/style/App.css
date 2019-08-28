@@ -1,0 +1,12 @@
+#root{
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  background-color: #111;  
+}
+.App{
+  height: 667px;
+  width: 375px;
+  background-color: #260235;
+  margin: auto;
+}
