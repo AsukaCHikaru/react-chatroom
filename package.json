@@ -4,6 +4,9 @@
   "private": true,
   "homepage": "https://asukachikaru.github.io/react-chatroom",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.22",
+    "@fortawesome/free-solid-svg-icons": "^5.10.2",
+    "@fortawesome/react-fontawesome": "^0.1.4",
     "eslint": "^6.1.0",
     "gh-pages": "^2.1.1",
     "prop-types": "^15.7.2",

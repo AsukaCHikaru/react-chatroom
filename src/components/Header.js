@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars, faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 
 import { NAME } from "../constants/string";
 import { move } from "../services/action";
@@ -17,10 +19,18 @@ const mapDispatchToProps = {
 };
 
 const renderLeftBtn = () => {
-  return <buttpn></buttpn>
+  return (
+    <buttpn className="header-button">
+      <FontAwesomeIcon icon={faBars} />
+    </buttpn>
+  )
 };
 const renderRightBtn = () => {
-  return <buttpn></buttpn>
+  return (
+    <buttpn>
+      {/* <FontAwesomeIcon icon={faChevronLeft} /> */}
+    </buttpn>
+  );
 };
 
 const Header = ({ location }) => {
