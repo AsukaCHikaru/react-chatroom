@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faChevronLeft, faComment } from "@fortawesome/free-solid-svg-icons";
 
 import { NAME } from "../constants/string";
 import { move } from "../services/action";
@@ -27,8 +27,8 @@ const renderLeftBtn = () => {
 };
 const renderRightBtn = () => {
   return (
-    <buttpn>
-      {/* <FontAwesomeIcon icon={faChevronLeft} /> */}
+    <buttpn className="header-button">
+      <FontAwesomeIcon icon={faComment} />
     </buttpn>
   );
 };

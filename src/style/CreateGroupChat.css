@@ -1,0 +1,60 @@
+.create-groupchat-container{
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  width: 330px;
+  
+}
+.create-groupchat-input-container{
+  margin: auto;
+  width: 100%;
+  
+}
+.create-groupchat-planet-selector-container{
+  margin: 40px 0;
+  display: grid;
+  grid-template-columns: auto 91px auto;
+}
+.create-groupchat-planet-selector-container img{
+  height: 91px;
+  width: 91px;
+}
+.create-groupchat-planet-selector-btn{
+  margin: auto;
+  background-color: transparent;
+  border: none;
+  color: #654D8D;
+  font-size: 30px;
+  cursor: pointer;
+}
+.create-groupchat-input{
+  /* margin: 0 0 20px 0; */
+  width: 100%;
+  background-color: transparent;
+  border: solid #BF9EF688;
+  border-width: 0 0 2px 0;
+  font-size: 14px;
+  height: 40px;
+  color: #ffffff4d;
+}
+.create-groupchat-input.desc{
+  height: 70px;
+}
+.create-groupchat-input-textnumber{
+  margin: 5px 0 0 0;
+  text-align: end;
+  line-height: 15px;
+  font-weight: 400;
+  font-size: 12px;
+  color: #fff8;
+}
+.create-groupchat-submit{
+  margin: 40px 0;
+  height: 40px;
+  background-color: #654D8D;  
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+}

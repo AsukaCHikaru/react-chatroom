@@ -1,0 +1,16 @@
+.groupchat-list-container{
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 330px;
+}
+.groupchat-search-input{
+  margin: 33px auto 40px auto;
+  width: 330px;
+  background-color: transparent;
+  border: solid #BF9EF688;
+  border-width: 0 0 2px 0;
+  font-size: 14px;
+  line-height: 40px;
+  color: #fff;
+}

@@ -39,3 +39,13 @@ a{
   color: #ffffff4d;
   line-height: 20px;
 }
+.create-groupchat{
+  background-color: #654D8D;
+}
+.create-groupchat .chatroom-item-info-container{
+  display: flex;
+  justify-content: center;
+}
+.create-groupchat .chatroom-item-info-name{
+  margin: auto;
+}

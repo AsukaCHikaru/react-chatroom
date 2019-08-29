@@ -7,6 +7,7 @@ import Lobby from "./Lobby";
 import Chatroom from "./Chatroom";
 import GroupChatList from "./GroupChatList";
 import SoloChatList from "./SoloChatList";
+import CreateGroupChat from "./CreateGroupChat";
 
 // const mapStateToProps = state => {
 // };
@@ -21,6 +22,7 @@ const LayoutComponent = ({}) => {
       <Route path="/" exact component={Lobby} />
       <Route path="/galaxies" component={GroupChatList} />
       <Route path="/plants" component={SoloChatList} />
+      <Route path="/new-planet" component={CreateGroupChat} />
     </div>
   );
 }

@@ -1,34 +1,39 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React, { Component } from "react";
+import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
 import "../style/ChatroomItem.css";
 
 const mapStateToProps = (state, ownProps) => {
-  const { icon, name, desc } = ownProps;
+  const { icon, name, desc, type } = ownProps;
   return {
     icon,
     name,
-    desc
-  }
+    desc,
+    type
+  };
 };
 
-const mapDispatchToProps = {
+const mapDispatchToProps = {};
+
+const renderIcon = icon => {
+  return icon !== undefined ? (
+    <img
+      className="chatroom-item-icon"
+      src={process.env.PUBLIC_URL + icon}
+    ></img>
+  ) : null;
 };
 
-const renderIcon = (icon) => {
-  return icon !== undefined
-    ? <img 
-        className="chatroom-item-icon"
-        src={process.env.PUBLIC_URL+icon}
-      ></img>
-    : null
-  ;
-};
-
-const ChatroomItem = ({ icon, name, desc }) => {
+const ChatroomItem = ({ icon, name, desc, type }) => {
   return (
-    <button className="chatroom-item-container">
+    <button
+      className={
+        type === "CREATE_GROUPCHAT"
+          ? "chatroom-item-container create-groupchat"
+          : "chatroom-item-container"
+      }
+    >
       {renderIcon(icon)}
       <div className="chatroom-item-info-container">
         <h3 className="chatroom-item-info-name">{name}</h3>
@@ -36,12 +41,16 @@ const ChatroomItem = ({ icon, name, desc }) => {
       </div>
     </button>
   );
-}
+};
 
 ChatroomItem.propTypes = {
   icon: PropTypes.string,
   name: PropTypes.string,
-  desc: PropTypes.string
-}
+  desc: PropTypes.string,
+  type: PropTypes.string,
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(ChatroomItem);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ChatroomItem);
