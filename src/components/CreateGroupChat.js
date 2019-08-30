@@ -24,11 +24,11 @@ class CreateGroupChat extends Component {
   }
 
   handleClickPlanetSelectorBtn = option => {
-    let newPlanet = this.state.planetDisplayed + option;
-    if (newPlanet === 0) newPlanet = 6;
-    if (newPlanet === 7) newPlanet = 1;
-    this.setState({
-      planetDisplayed: newPlanet
+    this.setState(prevState => {
+      const nextPlanet = (prevState.planetDisplayed + option) % 6;
+      return {
+        planetDisplayed: nextPlanet === 0 ? 6 : nextPlanet
+      }
     });
   };
 
@@ -89,7 +89,11 @@ class CreateGroupChat extends Component {
             {`${this.state.planetDesc.length}/20`}
           </h5>
         </div>
-        <input className="create-groupchat-submit" type="submit" value={NAME.BUTTON.CREATE_GROUPCHAT_SUBMIT} />
+        <input
+          className="create-groupchat-submit"
+          type="submit"
+          value={NAME.BUTTON.CREATE_GROUPCHAT_SUBMIT}
+        />
       </div>
     );
   }
