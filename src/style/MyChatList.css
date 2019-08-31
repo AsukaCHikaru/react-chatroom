@@ -1,0 +1,9 @@
+.my-chat-list-selector-container{
+  width: 330px;
+  height: 41px;
+  margin: 33px auto 20px auto;
+}
+.chatroom-list-container{
+  margin: auto;
+  width: 330px;
+}

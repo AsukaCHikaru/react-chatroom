@@ -1,17 +1,23 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+
 import {
   faChevronLeft,
   faChevronRight
 } from "@fortawesome/free-solid-svg-icons";
 
 import { NAME, DESCRIPTION } from "../constants/string";
+import { createGroupChat, move } from "../services/action";
 import "../style/CreateGroupChat.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const mapStateToProps = state => {};
 
-const mapDispatchToProps = {};
+const mapDispatchToProps = {
+  createGroupChat,
+  move
+};
 
 class CreateGroupChat extends Component {
   constructor(props) {
@@ -28,8 +34,19 @@ class CreateGroupChat extends Component {
       const nextPlanet = (prevState.planetDisplayed + option) % 6;
       return {
         planetDisplayed: nextPlanet === 0 ? 6 : nextPlanet
-      }
+      };
     });
+  };
+
+  handleClickCreatGroupChat = () => {
+    const newGroupChat = {
+      chatIcon: this.state.planetDisplayed,
+      chatTitle: this.state.planetTitle,
+      chatDesc: this.state.planetDesc,
+      chatId: new Date().getTime()
+    };
+    this.props.createGroupChat(newGroupChat);
+    this.props.move('MY_CHATROOM_LIST');
   };
 
   renderPlanetSelector = () => {
@@ -89,11 +106,14 @@ class CreateGroupChat extends Component {
             {`${this.state.planetDesc.length}/20`}
           </h5>
         </div>
-        <input
-          className="create-groupchat-submit"
-          type="submit"
-          value={NAME.BUTTON.CREATE_GROUPCHAT_SUBMIT}
-        />
+        <Link to="/chat-list" className="create-groupchat-submit">
+          <input
+            type="submit"
+            value={NAME.BUTTON.CREATE_GROUPCHAT_SUBMIT}
+            onClick={() => this.handleClickCreatGroupChat()}
+            disabled={this.state.planetTitle.length === 0}
+          />
+        </Link>
       </div>
     );
   }
